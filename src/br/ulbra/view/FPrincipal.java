@@ -419,14 +419,21 @@ public class FPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btSaveActionPerformed
 
     private void btCleanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCleanActionPerformed
-        int c;
-        for (c = 0; c < 10; c++) {
-            listP[c] = "";
+        int c,d=0;
+        if (JOptionPane.showConfirmDialog(null, "Tem certeza que deseja excluir a lista?", "confirme", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+            for (c = 0; c < 10; c++) {
+                listP[c] = "";
+            }
+                lbQuantV.setText(String.valueOf(d));
+                txtLista.setText("");
+                txtNomeAdd.setText("");
+                btSave.setEnabled(true);
+                btNew.setEnabled(false);
+        }else {
+            JOptionPane.showMessageDialog(null, "Exclusão cancelada!");
         }
-        txtLista.setText("");
-        txtNomeAdd.setText("");
-        btSave.setEnabled(true);
-        btNew.setEnabled(false);
+        
+        
 
     }//GEN-LAST:event_btCleanActionPerformed
     public static int quant() {
